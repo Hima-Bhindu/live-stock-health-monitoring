@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Livestock Monitoring</title>
+  <script type="module" src="auth.js"></script>
+
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 🌿 Blue + Green Gradient */
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #11998e, #38ef7d);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+  }
+
+  .login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+<img src="https://vastraholding.com/en/wp-content/uploads/2025/04/Livestock-Health-Monitoring-with-Smart-Sensors-and-Artificial-Intelligence-2.webp" class="login-logo">
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #00c9a7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #00a884;
+    transform: scale(1.05);
+  }
+
+  a {
+    color: #d4ff00;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .logo {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+</style></head>
+
+<body>
+
+  <div class="login-container">
+    <div class="logo">🐄</div>
+    <h2>Livestock Monitoring</h2>
+    <p class="subtitle">Smart Animal Health Dashboard</p>
+
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+
+    <button onclick="login()">Login</button>
+
+    <p style="margin-top:15px;">
+      Don't have account? <a href="signup.html">Signup</a>
+    </p>
+  </div>
+
+</body>
+</html>

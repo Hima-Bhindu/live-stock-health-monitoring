@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Livestock Monitoring Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Firebase Auth -->
+  <script type="module" src="auth.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logout-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      padding: 8px 15px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c0392b;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    form {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 180px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 80%;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* Center Dashboard Section */
+    .dashboard-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+
+    .dashboard-container {
+      width: 500px;
+      text-align: center;
+    }
+
+    canvas {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .analytics-box {
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+.login-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🐄 Livestock Monitoring Dashboard</h1>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<h2>Add New Animal</h2>
+
+<form id="animalForm">
+  <input type="text" id="name" placeholder="Animal Name" required>
+  <input type="text" id="type" placeholder="Animal Type" required>
+  <input type="number" id="temperature" placeholder="Temperature (°C)" required>
+  <input type="number" id="heartRate" placeholder="Heart Rate" required>
+  <button type="submit">Add Animal</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Temperature (°C)</th>
+      <th>Heart Rate</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="animalTable"></tbody>
+</table>
+
+<!-- CENTERED GRAPHS + ANALYTICS -->
+<div class="dashboard-wrapper">
+  <div class="dashboard-container">
+
+    <h2>📈 Temperature Trend</h2>
+    <canvas id="tempChart" width="400" height="250"></canvas>
+
+    <h2>🩺 Health Status Distribution</h2>
+    <canvas id="statusChart" width="400" height="250"></canvas>
+
+    <div class="analytics-box">
+      <p><strong>Average Temperature:</strong> <span id="avgTemp">--</span> °C</p>
+      <p><strong>Maximum Temperature:</strong> <span id="maxTemp">--</span> °C</p>
+      <p><strong>Minimum Temperature:</strong> <span id="minTemp">--</span> °C</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Your existing livestock script -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
