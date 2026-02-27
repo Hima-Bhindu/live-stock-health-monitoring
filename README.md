@@ -86,8 +86,9 @@ If temperature > normal range → Status: Fever
 Otherwise → Status: Healthy
 
 Data is displayed dynamically on the main dashboard.
-
-🔒 Security Features
+Project link:
+ https://hima-bhindu.github.io/live-stock-health-monitoring/
+ 🔒 Security Features
 
 Only authenticated users can access data.
 
