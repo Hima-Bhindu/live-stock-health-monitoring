@@ -6,7 +6,6 @@ The Livestock Health Monitoring System is a web-based application developed to m
 The system tracks important health parameters such as:
 
 Animal Name
-
 Animal ID
 
 Heart Rate
