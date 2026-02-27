@@ -113,3 +113,5 @@ Responsive web interface
 🎓 Conclusion
 
 This project demonstrates how modern web technologies and cloud services can be used to build a smart livestock monitoring system. It provides a simple, secure, and efficient way to track animal health and helps farmers improve livestock management.
+
+
